@@ -136,7 +136,7 @@ export const MobileMenu = () => {
                   fontWeight="400"
                   lineHeight={"24px"}
                 >
-                  <Link href="\login" 
+                  <Link href="\LoginPage" 
                   _hover={{ textDecoration: "none" }}>
                     Login
                   </Link>
