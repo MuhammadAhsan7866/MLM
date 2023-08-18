@@ -66,7 +66,7 @@ export const MobileMenu = () => {
                   <Link
                     href="/Home"
                     color="#7EFCFC"
-                    _hover={{ textDecoration: "none",color:'white' }}
+                    _hover={{ textDecoration: "none", color: "white" }}
                     fontSize="16px"
                     fontWeight="600"
                     lineHeight={"24px"}
@@ -86,7 +86,7 @@ export const MobileMenu = () => {
                   fontWeight="400"
                   lineHeight={"24px"}
                 >
-                   <Link
+                  <Link
                     href="/InvestmentPlans"
                     _hover={{ textDecoration: "none", color: "white" }}
                   >
@@ -105,7 +105,8 @@ export const MobileMenu = () => {
                   fontWeight="400"
                   lineHeight={"24px"}
                 >
-                  <Link href="\About" _hover={{ textDecoration: "none" }}>
+                  <Link href="\About" 
+                  _hover={{ textDecoration: "none" }}>
                     About
                   </Link>
                 </Box>
@@ -135,7 +136,8 @@ export const MobileMenu = () => {
                   fontWeight="400"
                   lineHeight={"24px"}
                 >
-                  <Link href="\login" _hover={{ textDecoration: "none" }}>
+                  <Link href="\login" 
+                  _hover={{ textDecoration: "none" }}>
                     Login
                   </Link>
                 </Box>
@@ -150,19 +152,23 @@ export const MobileMenu = () => {
                   fontSize="16px"
                   fontWeight="400"
                   lineHeight={"24px"}
-                  w={'100%'}
+                  w={"100%"}
                 >
-                  <Link href="\SignUp" _hover={{ textDecoration: "none" }} w='100%'>
-                  <Button
-                bg={"#1ba8c6"}
-                color={"white"}
-                colorScheme="#1f3ac1"
-                _hover={{ bg: "black", color: "white" }}
-                px={"24px"}
-                w={'100%'}
-              >
-                Sign up
-              </Button>
+                  <Link
+                    href="\SignUp"
+                    _hover={{ textDecoration: "none" }}
+                    w="100%"
+                  >
+                    <Button
+                      bg={"#1ba8c6"}
+                      color={"white"}
+                      colorScheme="#1f3ac1"
+                      _hover={{ bg: "black", color: "white" }}
+                      px={"24px"}
+                      w={"100%"}
+                    >
+                      Sign up
+                    </Button>
                   </Link>
                 </Box>
               </Flex>
