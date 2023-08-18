@@ -215,7 +215,7 @@ export default function BlogCard() {
           gap={"30px"}
           flexWrap={{ base: "wrap", md: "wrap", lg: "nowrap" }}
         >
-          <Center py={6}>
+          {/* <Center py={6}>
             <Box
               maxW={{ base: "100%", md: "100%", lg: "445px" }}
               w={"full"}
@@ -385,7 +385,7 @@ export default function BlogCard() {
                 </Stack>
               </Stack>
             </Box>
-          </Center>
+          </Center> */}
         </Flex>
       </Container>
     </Box>
