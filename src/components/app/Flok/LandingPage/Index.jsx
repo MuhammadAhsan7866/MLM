@@ -23,12 +23,6 @@ const LandingPage = () => {
         <WhyChooseUs/>
         <BonusLevel/>
         <Box py='60px'>
-          <Flex justifyContent={'center'} alignItems={'center'}>
-          <Text color={'white'} fontSize={'35px'} fontWeight={'bold'}>
-           Latest News
-          </Text>
-          </Flex>
-         
           <BlogCard/>
         </Box>
       </LayoutWrapper>
