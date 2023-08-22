@@ -5,7 +5,8 @@ import WeekMenu from "./WeekMenu";
 import AnalyticCard from "./AnalyticCard";
 import MoviesTable from "./MoviesTable";
 import SevendayAnalytic from "./SevendayAnalytic";
-import ReveiwSection from "./ReviewsComponent/Index";
+import ReveiwSection from "./ReveiwSection";
+
 
 const AnalyticsTabContent = () => {
   return (
@@ -82,7 +83,7 @@ const AnalyticsTabContent = () => {
           </Box>
         </Flex>
         <Box>
-          <ReveiwSection />
+          <ReveiwSection/>
         </Box>
       </Box>
     </Box>

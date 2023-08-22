@@ -1,5 +1,4 @@
 import React from "react";
-import ReviewTabs from "./ReviewTabs";
 import { Box } from "@chakra-ui/react";
 const ReviewTableData = [
   {
@@ -45,9 +44,8 @@ const ReviewTableData = [
 ];
 const ReveiwSection = () => {
   return (
-    <Box>
-      <ReviewTabs AnalyticPageReview={ReviewTableData} />
-    </Box>
+    <>
+    </>
   );
 };
 

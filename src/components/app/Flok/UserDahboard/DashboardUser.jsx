@@ -38,8 +38,8 @@ import {
 } from "@chakra-ui/react";
 import { HamburgerIcon } from "@chakra-ui/icons";
 import DashBoardTablist from "./DashBoardTablist";
-import DashboardTabContent from "./DashboardTabContent";
 import AnalyticsTabContent from "./AnalyticsTabContent";
+import DashboardTabContent from "./DashboardTabContent";
 
 const DashboardUser = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -159,7 +159,7 @@ const DashboardUser = () => {
             <TabPanels>
               {activeTab === 0 && (
                 <Box>
-                  <DashboardTabContent />
+                  <DashboardTabContent/>
                 </Box>
               )}
 
