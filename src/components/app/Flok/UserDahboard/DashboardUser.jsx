@@ -15,24 +15,17 @@
 import React, { useState } from "react";
 import {
   Box,
-  Button,
   Drawer,
   DrawerBody,
   DrawerCloseButton,
   DrawerContent,
-  DrawerHeader,
   DrawerOverlay,
   Flex,
-  Icon,
   IconButton,
   Image,
   Link,
-  Tab,
-  TabList,
-  TabPanel,
   TabPanels,
   Tabs,
-  Text,
   useDisclosure,
   useMediaQuery,
 } from "@chakra-ui/react";
@@ -40,7 +33,6 @@ import { HamburgerIcon } from "@chakra-ui/icons";
 import DashBoardTablist from "./DashBoardTablist";
 import AnalyticsTabContent from "./AnalyticsTabContent";
 import DashboardTabContent from "./DashboardTabContent";
-
 const DashboardUser = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [isMobile] = useMediaQuery("(max-width: 991px)");
@@ -68,7 +60,7 @@ const DashboardUser = () => {
           borderRight={"1px solid #E7E7E7"}
           height="100vh"
           px={{ base: "20px", xl: "10px", xxl: "56px" }}
-          bg="white"
+          bg="blue"
         >
           <Flex justifyContent={"center"} alignItems={"center"}>
             <Link
@@ -84,7 +76,7 @@ const DashboardUser = () => {
               <Image
                 h={{ base: "20px", md: "28px" }}
                 w={{ base: "50px", md: "103px" }}
-                src="/logoflok.svg"
+                src="/bit-logo.png"
                 alt="logo"
               />
             </Link>
@@ -159,7 +151,7 @@ const DashboardUser = () => {
             <TabPanels>
               {activeTab === 0 && (
                 <Box>
-                  <DashboardTabContent/>
+                  <DashboardTabContent />
                 </Box>
               )}
 
