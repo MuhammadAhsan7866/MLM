@@ -60,7 +60,7 @@ const DashboardUser = () => {
           borderRight={"1px solid #E7E7E7"}
           height="100vh"
           px={{ base: "20px", xl: "10px", xxl: "56px" }}
-          bg="blue"
+          bg="#052d85"
         >
           <Flex justifyContent={"center"} alignItems={"center"}>
             <Link
