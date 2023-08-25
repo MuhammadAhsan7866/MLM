@@ -151,7 +151,7 @@ const DashboardUser = () => {
             <TabPanels>
               {activeTab === 0 && (
                 <Box>
-                  <DashboardTabContent />
+                  {/* <DashboardTabContent /> */}
                 </Box>
               )}
 
