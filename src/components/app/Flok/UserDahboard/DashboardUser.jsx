@@ -44,7 +44,7 @@ const DashboardUser = () => {
   };
 
   return (
-    <Box px="10px" position={"relative"}>
+    <Box px="10px" position={"relative"} bg='black'>
       <Flex flexDirection={{ base: "column", lg: "row" }}>
         {/* Sidebar */}
         <Box
@@ -54,13 +54,13 @@ const DashboardUser = () => {
             lg: "235px",
             xl: "335px",
             xxl: "335px",
-            xxxl: "485px",
+            xxxl: "350px",
           }}
           w="100%"
           borderRight={"1px solid #E7E7E7"}
           height="100vh"
           px={{ base: "20px", xl: "10px", xxl: "56px" }}
-          bg="white"
+          bg="black"
         >
           <Flex justifyContent={"center"} alignItems={"center"}>
             <Link
@@ -157,7 +157,7 @@ const DashboardUser = () => {
 
               {activeTab === 1 && (
                 <Box>
-                  <AnalyticsTabContent />
+                  {/* <AnalyticsTabContent /> */}
                 </Box>
               )}
 
