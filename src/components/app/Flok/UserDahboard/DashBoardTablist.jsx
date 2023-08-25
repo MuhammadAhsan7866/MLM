@@ -55,7 +55,7 @@ const DashBoardTablist = () => {
     <TabList borderLeft={"none"} w="100%" justifyContent={"flex-start"}>
       {tabItems.map((item, index) => (
         <Tab
-          color="#757575"
+          color="white"
           justifyContent={{ base: "center", xxl: "flex-start" }}
           key={index}
           textAlign={"left"}
