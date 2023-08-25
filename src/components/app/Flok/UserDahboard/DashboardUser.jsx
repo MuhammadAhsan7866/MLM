@@ -58,7 +58,7 @@ const DashboardUser = () => {
           }}
           w="100%"
           borderRight={"1px solid #E7E7E7"}
-          height="100vh"
+          // height="100vh"
           px={{ base: "20px", xl: "10px", xxl: "56px" }}
           bg="black"
         >
@@ -151,7 +151,7 @@ const DashboardUser = () => {
             <TabPanels>
               {activeTab === 0 && (
                 <Box>
-                  {/* <DashboardTabContent /> */}
+                  <DashboardTabContent />
                 </Box>
               )}
 
