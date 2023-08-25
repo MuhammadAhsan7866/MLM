@@ -44,7 +44,7 @@ const DashboardUser = () => {
   };
 
   return (
-    <Box px="10px" position={"relative"} bg='black'>
+    <Box px="10px" position={"relative"} >
       <Flex flexDirection={{ base: "column", lg: "row" }}>
         {/* Sidebar */}
         <Box
