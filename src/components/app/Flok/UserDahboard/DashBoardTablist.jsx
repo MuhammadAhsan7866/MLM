@@ -61,7 +61,7 @@ const DashBoardTablist = () => {
           textAlign={"left"}
           mb="40px"
           borderRadius={"4px"}
-          _selected={{ borderBottom: "none", bg: "#E6E6E6", color: "#1F1F1F" }}
+          _selected={{ borderBottom: "none", bg: "#1BA8C6", color: "#1F1F1F" }}
           maxW={"341px"}
           w="100%"
           py="14px"
