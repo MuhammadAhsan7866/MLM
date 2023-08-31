@@ -18,7 +18,7 @@ const StatCard = ({ title, value,Image }) => {
       minH={'250px'}
       _hover={{border:'3px solid #4282C4'}}
       bgGradient="linear-gradient(to right, #20577a, #1A365D)"
-      zIndex={{base:'none',md:'none',lg:'9999'}}
+      zIndex={{base:'0',md:'0',lg:'9999'}}
       cursor={'pointer'}
     >
         <Img src={Image} w='80px' m='auto'  />
