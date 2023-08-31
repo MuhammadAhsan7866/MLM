@@ -13,7 +13,7 @@ const AccountStatsCard = ({ title, value,Image }) => {
       borderRadius="md"
       boxShadow="md"
       textAlign="center"
-      maxW={{base:'100%',md:'100%',lg:'48%',xxl:'265px',xxxl:'370px'}}
+      maxW={{base:'100%',md:'100%',lg:'48%',xxl:'284px',xxxl:'370px'}}
       w={'100%'}
       minH={'250px'}
       _hover={{border:'3px solid #4282C4'}}

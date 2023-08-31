@@ -13,12 +13,12 @@ const StatCard = ({ title, value,Image }) => {
       borderRadius="md"
       boxShadow="md"
       textAlign="center"
-      maxW={{base:'100%',md:'100%',lg:'48%',xxl:'265px',xxxl:'370px'}}
+      maxW={{base:'100%',md:'100%',lg:'48%',xxl:'284px',xxxl:'370px'}}
       w={'100%'}
       minH={'250px'}
       _hover={{border:'3px solid #4282C4'}}
       bgGradient="linear-gradient(to right, #20577a, #1A365D)"
-      zIndex={'9999'}
+      zIndex={{base:'none',md:'none',lg:'9999'}}
       cursor={'pointer'}
     >
         <Img src={Image} w='80px' m='auto'  />
