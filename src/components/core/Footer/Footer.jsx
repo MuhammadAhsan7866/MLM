@@ -1,164 +1,135 @@
 import {
   Box,
-  Text,
-  Image,
-  Flex,
-  Input,
-  Button,
-  Heading,
+  Container,
   Stack,
+  SimpleGrid,
+  Text,
   Link,
-} from "@chakra-ui/react";
-import React from "react";
+  Img,
+  Flex,
+} from '@chakra-ui/react';
 
-const Footers = () => {
+const ListHeader = ({ children }) => {
   return (
-    <Box bg="#2f0d6c" pt="47px">
-      <Box maxW={"7xl"} mx="auto" px="20px" py="20px">
-        <Flex
-          justifyContent={"space-between"}
-          gap={{ base: "20px", md: "100px" }}
-          flexDirection={{ base: "column", md: "row" }}
-          mb="32px"
-        >
-          <Box w={{ base: "100%", md: "50%" }}>
-          <Image
-                  // h={{ base: "20px", md: "28px" }}
-                  w={{ base: "400px", md: "250px" }}
-                  src="/bit-logo.png"
-                  alt="logo"
-                />
-            <Text
-              textAlign={{ base: "center", md: "left" }}
-              mb="20px"
-              color="white"
-              fontSize="14px"
-              fontWeight="300"
-              lineHeight={"28px"}
-              maxW="580px"
-            >
-              Are you looking for professional advice for your new business. Are
-              you looking for professional advice for your new business. Are you
-              looking for professional advice for your new business.
-            </Text>
-            <Box
-              maxW={"413px"}
-              w="100%"
-              py={{ base: "5px", md: "11px" }}
-              pl="14px"
-              pr={{ base: "7px", md: "14px" }}
-              bg="#FFFFFF"
-              borderRadius={"2px"}
-              display="flex"
-              justifyContent={"space-between"}
-            >
-              <Input
-                border="none"
-                _focusVisible={{ border: "none" }}
-                px="0px"
-                placeholder="your@address.com"
-              />
-              <Button
-                bg="#1ba8c6"
-                colorScheme={"#1ba8c6"}
-                color="#FFFFFF"
-                fontSize="10px"
-                fontWeight="400"
-                lineHeight={"150%"}
-                py="8px"
-                px={{ base: "20px", md: "36px", lg: "56px" }}
-                borderRadius={"3px"}
-              >
-                Submit
-              </Button>
-            </Box>
-          </Box>
-          <Box w={{ base: "100%", md: "50%" }}>
-            <Stack align={"flex-start"}>
-              <Heading color={"#1BA8C6"} fontSize={"18px"} mb='15px'>
-                Services Link
-              </Heading>
-              <Box as="a" href={"#"} color={'white'}>
-              Home
-              </Box>
-              <Box as="a" href={"#"} color={'white'}>
-               Investment Plans
-              </Box>
-              <Box as="a" href={"#"} color={'white'}>
-               About
-              </Box>
-                <Box as="a" href={"#"} color={'white'}>
-               Blog
-              </Box>
-                <Box as="a" href={"#"} color={'white'}>
-             Contact Us
-              </Box>
-            </Stack>
-          </Box>
-          <Box w={{ base: "100%", md: "50%" }}>
-            <Text
-              mb="20px"
-              color="#1BA8C6"
-              fontSize="16px"
-              fontWeight="700"
-              lineHeight={"20px"}
-              textAlign={{ base: "center", md: "left" }}
-            >
-              CALL US
-            </Text>
-            <Flex
-              alignItems={"center"}
-              gap={{ base: "10px", md: "26px" }}
-              flexDirection={{ base: "column", md: "row" }}
-              mb="20px"
-            >
-              <Text
-                color="white"
-                fontSize="14px"
-                fontWeight="300"
-                lineHeight={"28px"}
-              >
-                +44 330 022 5700
-              </Text>
-              <Text
-                color="white"
-                fontSize="14px"
-                fontWeight="300"
-                lineHeight={"28px"}
-              >
-                Amet minim mollit non deserunt
-              </Text>
-            </Flex>
-            <Text
-              mb="20px"
-              color="#1BA8C6"
-              fontSize="16px"
-              fontWeight="700"
-              lineHeight={"20px"}
-              textAlign={{ base: "center", md: "left" }}
-            >
-              Location & Language
-            </Text>
-            <Flex
-              alignItems={"center"}
-              gap="10px"
-              justifyContent={{ base: "center", md: "left" }}
-            >
-              <Image alt="img" src="/ukflags.svg"></Image>
-              <Text
-                color="#8F8F8F"
-                fontSize="14px"
-                fontWeight="300"
-                lineHeight={"28px"}
-              >
-                English
-              </Text>
-            </Flex>
-          </Box>
-        </Flex>
-      </Box>
-    </Box>
+    <Text fontWeight={'500'} fontSize={'lg'} mb={2}>
+      {children}
+    </Text>
   );
 };
 
-export default Footers;
+export default function LargeWithAppLinksAndSocial() {
+  return (
+<Box
+  backdropFilter="blur(10px)"
+  bgImage="url('/ftrbg.avif')"
+  backgroundSize="cover"
+  backgroundPosition="center"
+  width="100%"
+  borderTopLeftRadius="64px"
+  borderTopRightRadius="64px"
+  opacity="1"
+  borderBottomWidth="0px"
+  borderLeftWidth="0px"
+  borderRightWidth="0px"
+  borderTopWidth="1px"
+  borderStyle="solid"
+  borderColor="rgba(130, 130, 130, 0.4)"
+  p={{ base: '25px', sm: '25px', md: '30px', lg: '40px', xl: '50px', xxl: '70px' }}
+>
+
+      <Container as={Stack} maxW={'1440px'} py={10}>
+        <SimpleGrid columns={{ base: 1, sm: 2, md: 4 }} spacing={8}>
+          <Stack align={'flex-start'}>
+            <Box>
+            <Box>
+          <Link href="http://localhost:3000/">
+          <Img src="/seologo.png" w={'70%'} mb={'18px'} />
+          </Link>
+        </Box>
+              {/* <Text
+                fontSize={"16px"}
+                fontWeight={400}
+                lineHeight={"24px"}
+                mt="15px"
+                color={"white"}
+                mb={"25px"}
+              >
+                Innovate today, lead tomorrow.
+              </Text> */}
+              <Flex flexDirection={"column"} gap={"18px"}>
+                <Flex alignItems={"center"} gap={"18px"} mt={"0px !important"}>
+                  <Img w={'10%'} src="/023.png" />
+                  <Link href={"#"} color={"white"}>
+                    Facebook
+                  </Link>
+                </Flex>
+                <Flex alignItems={"center"} gap={"25px"} mt={"0px !important"}>
+                  <Img w={'10%'} src="/011.png" />
+                  <Link href={"#"} color={"white"}>
+                    LinkeDin
+                  </Link>
+                </Flex>
+                <Flex alignItems={"center"} gap={"25px"} mt={"0px !important"}>
+                  <Img src="/021.png" w={'10%'}/>
+                  <Link href={"#"} color={"white"}>
+                  Twitter
+                  </Link>
+                </Flex>
+               
+              </Flex>
+            </Box>
+          </Stack>
+
+          <Stack gap={'14px'} align={'flex-start'}>
+            <Box pb={'13px'} borderBottom={'1px solid #253538'} w={'70%'}>
+              <Text color={'white'}> Pages</Text>
+            </Box>
+            <Link color={'white'} href={'#'}>Home</Link>
+            <Link color={'white'} href={'#'}>About</Link>
+            <Link color={'white'} href={'#'}> Success Story</Link>
+            <Link color={'white'} href={'#'}> Careers</Link>
+            <Link color={'white'} href={'#'}> Plans</Link>
+            <Link color={'white'} href={'#'}> Contact</Link>
+          </Stack>
+
+          <Stack align={'flex-start'} gap={'14px'}>
+            <Box pb={'13px'} borderBottom={'1px solid #253538'} w={'70%'}>
+              <Text color={'white'}> Services</Text>
+            </Box>
+            <Link color={'white'} href={'#'}>Support Mariage</Link>
+            <Link color={'white'} href={'#'}>Safty Security</Link>
+            <Link color={'white'} href={'#'}>Bride Guide</Link>
+            <Link color={'white'} href={'#'}>Groom Guide</Link>
+          </Stack>
+
+          <Stack align={'flex-start'} gap={'14px'}>
+            <Box pb={'13px'} borderBottom={'1px solid #253538'} w={'70%'}>
+              <Text color={'white'}> Support</Text>
+            </Box>
+            <Link color={'white'} href={'#'}>Contact Us </Link>
+            <Link color={'white'} href={'#'}>Privacy Policy</Link>
+            <Link color={'white'} href={'#'}>Terms of Service</Link>
+          </Stack>
+        </SimpleGrid>
+      </Container>
+
+      <Box
+        borderTopWidth={1}
+        borderStyle={'solid'}
+        borderColor={'#253538'}
+      >
+        <Container
+          as={Stack}
+          maxW={'6xl'}
+          py={4}
+          direction={{ base: 'column', md: 'row' }}
+          spacing={4}
+          justify={'center'}
+          align={'center'}
+        >
+          <Text color={'#7B7A7A'}>Copyright © 2024 Braintree. All rights reserved</Text>
+        </Container>
+      </Box>
+    </Box>
+  );
+}

@@ -1,15 +1,24 @@
 // pages/_app.js
-import { ChakraProvider } from "@chakra-ui/react";
+import { ChakraProvider } from '@chakra-ui/react'
+import LayoutWrapper from '../src/components/core/LayoutWrapper'
+import ScrollButton from '../src/components/core/ScrollButton'
+import "@fontsource/rajdhani"
 
-import "@fontsource/rajdhani";
-import { mynewtheme } from "../src/theme";
 
-function Flok({ Component, pageProps }) {
+
+
+import { mynewtheme } from '../src/theme'
+
+function Marketplace({ Component, pageProps }) {
   return (
     <ChakraProvider resetCSS theme={mynewtheme}>
-      <Component {...pageProps} />
+      <LayoutWrapper>
+        <ScrollButton/>
+      
+        <Component {...pageProps} />
+      </LayoutWrapper>
     </ChakraProvider>
-  );
+  )
 }
 
-export default Flok;
+export default Marketplace

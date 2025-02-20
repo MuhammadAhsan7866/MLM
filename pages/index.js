@@ -1,14 +1,10 @@
 import React from 'react'
-
-import LandingPage from '../src/components/app/Flok/LandingPage/Index'
-
-
-
+import MarketLandingPage from '../src/components/app/BrainLandingPage/Index'
 
 const Home = () => {
   return (
     <>
-     <LandingPage/>
+      <MarketLandingPage/>
     </>
   )
 }

@@ -1,142 +1,367 @@
-import { Box, Link, Image, Button, Container, Flex } from "@chakra-ui/react";
-import React from "react";
-import MobileMenu from "./MobileMenu";
+import { useState, useEffect } from "react";
+import {
+  Box,
+  Flex,
+  HStack,
+  IconButton,
+  Button,
+  useDisclosure,
+  Stack,
+  ButtonGroup,
+  Img,
+  Drawer,
+  DrawerBody,
+  DrawerHeader,
+  DrawerOverlay,
+  DrawerContent,
+  DrawerCloseButton,
+  Menu,
+  MenuButton,
+  MenuList,
+  MenuItem,
+  Text,
+} from "@chakra-ui/react";
+import { HamburgerIcon, ChevronDownIcon } from "@chakra-ui/icons";
+import Link from "next/link";
 
-const Header = () => {
+export default function Header() {
+  const { isOpen, onOpen, onClose } = useDisclosure();
+  const [headerStyles, setHeaderStyles] = useState({
+    backgroundColor: "#121225",
+    backdropFilter: "blur(10px)",
+  });
+
+  const handleScroll = () => {
+    if (window.scrollY > 50) {
+      setHeaderStyles({
+        backgroundColor: "#121225",
+        backdropFilter: "blur(10px)",
+      });
+    } else {
+      setHeaderStyles({
+        backgroundColor: "#121225",
+        backdropFilter: "blur(10px)",
+      });
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
-    <>
-      <Box
-        py={{ base: "6px", md: "11px" }}
-        bg="transparent"
-        position={"relative"}
+    <Box
+      sx={{
+        ...headerStyles,
+        // position: "fixed",
+        width: "100%",
+        opacity: 1,
+        zIndex: 10,
+      }}
+      px={4}
+    >
+      <Flex
+        h={"95px"}
+        alignItems="center"
+        justifyContent="space-between"
+        maxW={"1340px"}
+        m={"auto"}
+        p={"12px"}
       >
-        <Container maxW={"1675px"} px="20px">
-          <Flex justifyContent="space-between" alignItems="center" gap="20px">
-            <Flex>
-              <Link
-                href="/"
-                maxW={{ sm: "200px", base: "200px" }}
-                ml={{ sm: "16px", base: "15px" }}
-                textDecoration="none !important"
-                position="relative"
-                mt={{ base: "6px", md: "2px" }}
-              >
-                <Image
-                  // h={{ base: "20px", md: "28px" }}
-                  w={{ base: "400px", md: "400px" }}
-                  src="/bit-logo.png"
-                  alt="logo"
-                />
-              </Link>
-            </Flex>
+        <Box w={{base:'100%',md:'25%'}}>
+          <Link href="http://localhost:3000/">
+            {/* <Text
+              bgGradient="linear(0deg, rgb(184, 137, 35) 0%, rgb(222, 182, 95) 100%)"
+              bgClip="text"
+              fontSize="30px"
+              fontWeight="bold"
+              fontFamily={"Merriweather"}
+            >
+              Shaadi PK
+            </Text> */}
+            <Img src="/seologo.png" w={"70%"} />
+          </Link>
+        </Box>
 
-            <Flex alignItems={"center"} display={{ lg: "flex", base: "none" }}>
-              <Flex
-                w="100%"
-                justifyContent={"space-between"}
-                mr="43px"
-                gap="65px"
+        <Flex alignItems="center" display={{ base: "none", md: "flex" }}>
+          <HStack
+            as="nav"
+            spacing={4}
+            display={{
+              base: "none",
+              md: "none",
+              lg: "block",
+              xxl: "block",
+              xxxl: "block",
+            }}
+          >
+            <Menu>
+              <MenuButton
+                as={Button}
+                rightIcon={<ChevronDownIcon />}
+                color="white"
+                bg={"transparent"}
+                _hover={{ color: "gray.400" }}
+                _focus={{ boxShadow: "none", bg: "transparent" }}
+                _active={{ bg: "transparent" }}
+                fontWeight={"normal"}
               >
-                <Box pb="4px" minWidth={"3px"}>
-                  <Link
-                    href="/Home"
-                    color="#7EFCFC"
-                    _hover={{ textDecoration: "none" }}
-                    fontSize="16px"
-                    fontWeight="600"
-                    lineHeight={"24px"}
-                  >
-                    Home
-                  </Link>
-                </Box>
-                <Box
-                  pb="4px"
-                  color="White"
-                  fontSize="16px"
-                  fontWeight="500"
-                  lineHeight={"24px"}
+                About
+              </MenuButton>
+              <MenuList bg="black" color="white">
+                <MenuItem
+                  as={Link}
+                  href="/OurVision"
+                  _hover={{
+                    bg: "linear-gradient(180deg, rgb(235, 187, 84) 0%, rgb(184, 137, 35) 100%)",
+                    color: "black",
+                  }}
+                  bg={"black"}
                 >
-                  <Link
-                    href="/InvestmentPlans"
-                    _hover={{ textDecoration: "none", color: "#7EFCFC" }}
-                  >
-                    Invesment Plans
-                  </Link>
-                </Box>
-                <Box
-                  pb="4px"
-                  color="White"
-                  fontSize="16px"
-                  fontWeight="500"
-                  lineHeight={"24px"}
+                  Our Vision
+                </MenuItem>
+                <MenuItem
+                  as={Link}
+                  href="/SupportMarriage"
+                  _hover={{
+                    bg: "linear-gradient(180deg, rgb(235, 187, 84) 0%, rgb(184, 137, 35) 100%)",
+                    color: "black",
+                  }}
+                  bg={"black"}
                 >
-                  <Link
-                    href="/About"
-                    _hover={{ textDecoration: "none", color: "#7EFCFC" }}
-                  >
-                    About
-                  </Link>
-                </Box>
-                <Box
-                  pb="4px"
-                  color="White"
-                  fontSize="16px"
-                  fontWeight="500"
-                  lineHeight={"24px"}
+                  Support a Marriage
+                </MenuItem>
+                <MenuItem
+                  as={Link}
+                  href="/SaftySecurity"
+                  _hover={{
+                    bg: "linear-gradient(180deg, rgb(235, 187, 84) 0%, rgb(184, 137, 35) 100%)",
+                    color: "black",
+                  }}
+                  bg={"black"}
                 >
-                  <Link
-                    href="/Blog"
-                    _hover={{ textDecoration: "none", color: "#7EFCFC" }}
-                  >
-                    Blog
-                  </Link>
-                </Box>
-                <Box
-                  pb="4px"
-                  color="White"
-                  fontSize="16px"
-                  fontWeight="500"
-                  lineHeight={"24px"}
+                  Safety and Security
+                </MenuItem>
+                <MenuItem
+                  as={Link}
+                  href="/BrideGuide"
+                  _hover={{
+                    bg: "linear-gradient(180deg, rgb(235, 187, 84) 0%, rgb(184, 137, 35) 100%)",
+                    color: "black",
+                  }}
+                  bg={"black"}
                 >
-                  <Link
-                    href="/Form"
-                    _hover={{ textDecoration: "none", color: "#7EFCFC" }}
-                  >
-                    Contact
-                  </Link>
-                </Box>
-              </Flex>
-            </Flex>
-            <Box gap="20px" display={{ lg: "flex", base: "none" }} alignItems={'center'}>
-              <Link
-                href="/LoginPage"
-                _hover={{ textDecoration: "none", color: "#7EFCFC" }}
-                color={'white'}
-                fontSize={'16px'}
-                fontWeight={'bold'}
-              >
-                Login
-              </Link>
+                  Bride Guide
+                </MenuItem>
+                <MenuItem
+                  as={Link}
+                  href="/GroomGuide"
+                  _hover={{
+                    bg: "linear-gradient(180deg, rgb(235, 187, 84) 0%, rgb(184, 137, 35) 100%)",
+                    color: "black",
+                  }}
+                  bg={"black"}
+                >
+                  Groom Guide
+                </MenuItem>
+              </MenuList>
+            </Menu>
+
+            <Link href="/SuccessStory">
               <Button
-                bg={"#1ba8c6"}
-                color={"white"}
-                colorScheme="#1f3ac1"
-                _hover={{ bg: "black", color: "white" }}
-                px={"24px"}
-                href='/SignupPage'
+                color="white"
+                bg={"transparent"}
+                colorScheme="transparent"
+                aria-label="Contact Us"
+                _hover={{ color: "gray.400" }}
               >
-                Sign up
+                Success Story
               </Button>
-            </Box>
+            </Link>
+            <Link href="/Career">
+              <Button
+                color="white"
+                bg={"transparent"}
+                colorScheme="transparent"
+                aria-label="Contact Us"
+                _hover={{ color: "gray.400" }}
+              >
+                Careers
+              </Button>
+            </Link>
+            <Link href="/Cards">
+              <Button
+                color="white"
+                bg={"transparent"}
+                colorScheme="transparent"
+                aria-label="Contact Us"
+                _hover={{ color: "gray.400" }}
+                fontWeight={"normal"}
+              >
+                Plans
+              </Button>
+            </Link>
+            <Link href="#">
+              <Button
+                color="white"
+                bg={"transparent"}
+                colorScheme="transparent"
+                aria-label="Contact Us"
+                _hover={{ color: "gray.400" }}
+                fontWeight={"normal"}
+              >
+                Events
+              </Button>
+            </Link>
+            <Link href="#">
+              <Button
+                color="white"
+                bg={"transparent"}
+                colorScheme="transparent"
+                aria-label="Contact Us"
+                _hover={{ color: "gray.400" }}
+                fontWeight={"normal"}
+              >
+                Contact Us
+              </Button>
+            </Link>
+          </HStack>
+        </Flex>
 
-            <Box display={{ lg: "none", base: "block" }}>
-              <MobileMenu />
-            </Box>
-          </Flex>
-        </Container>
-      </Box>
-    </>
+        <Flex
+          alignItems="center"
+          justifyContent={"center"}
+          display={{
+            base: "none",
+            md: "none",
+            lg: "block",
+            xxl: "block",
+            xxxl: "block",
+          }}
+        >
+          <Button
+            sx={{
+              background: "linear-gradient(140deg, #FF6E00, #A629F2)",
+              color: "white",
+              border: "none",
+              padding: "15px 30px",
+              borderRadius: "150px",
+              cursor: "pointer",
+              height: "52px",
+              boxShadow:'0px 8px 18px -3px rgba(153.99999999999997, 0.9999999999999964, 255, 0.32)',
+              transition: "background 0.3s ease",
+              _hover: {
+                background: "linear-gradient(260deg, #FF4094, #A629F2)",
+              },
+            }}
+          >
+            Get Started
+          </Button>
+          ;
+        </Flex>
+
+        <IconButton
+          size="md"
+          icon={<HamburgerIcon color="white"/>}
+          aria-label="Open Menu"
+          display={{
+            base: "block",
+            md: "block",
+            lg: "none",
+            xxl: "none",
+            xxxl: "none",
+          }}
+         
+          onClick={onOpen}
+          sx={{
+            background: "linear-gradient(140deg, #FF6E00, #A629F2)",
+            color: "white",
+            transition: "background 0.3s ease",
+            
+          }}
+        />
+      </Flex>
+
+      <Drawer isOpen={isOpen} placement="right" onClose={onClose}>
+        <DrawerOverlay />
+        <DrawerContent bg="black">
+          <DrawerCloseButton />
+          <DrawerHeader></DrawerHeader>
+          <DrawerBody>
+            <Stack as="nav" spacing={4}>
+              <Menu>
+                <MenuButton
+                  as={Button}
+                  rightIcon={<ChevronDownIcon />}
+                  w="100%"
+                  bg="transparent"
+                  _hover={{ color: "gray.400" }}
+                  _focus={{ boxShadow: "none", bg: "transparent" }}
+                  _active={{ bg: "transparent" }}
+                  onMouseEnter={onOpen}
+                  onMouseLeave={onClose}
+                >
+                  About
+                </MenuButton>
+                <MenuList>
+                  <MenuItem as={Link} href="/OurVision">
+                    Our Vision
+                  </MenuItem>
+                  <MenuItem as={Link} href="/SupportMarriage">
+                    Support a Marriage
+                  </MenuItem>
+                  <MenuItem as={Link} href="/BankAccount">
+                    Safety and Security
+                  </MenuItem>
+                  <MenuItem as={Link} href="/BrideGuide">
+                    Bride Guide
+                  </MenuItem>
+                  <MenuItem as={Link} href="/GroomGuide">
+                    Groom Guide
+                  </MenuItem>
+                </MenuList>
+              </Menu>
+
+              <Link href="/Cards">
+                <Button
+                  bg="transparent"
+                  colorScheme="transparent"
+                  w="100%"
+                  textAlign="left"
+                  _hover={{ color: "gray.400" }}
+                >
+                  Plans
+                </Button>
+              </Link>
+              <Link href="/#">
+                <Button
+                  bg="transparent"
+                  colorScheme="transparent"
+                  w="100%"
+                  textAlign="left"
+                  _hover={{ color: "gray.400" }}
+                >
+                  Events
+                </Button>
+              </Link>
+              <Link href="/SuccessStory">
+                <Button
+                  bg="transparent"
+                  colorScheme="transparent"
+                  w="100%"
+                  textAlign="left"
+                  _hover={{ color: "gray.400" }}
+                >
+                  Success Story
+                </Button>
+              </Link>
+            </Stack>
+          </DrawerBody>
+        </DrawerContent>
+      </Drawer>
+    </Box>
   );
-};
-
-export default Header;
+}
